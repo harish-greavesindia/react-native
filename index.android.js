@@ -51,6 +51,25 @@ class Screen2 extends Component {
     }
   }
 
+  class Screen3 extends Component {
+    render() {
+      return (
+        <View style={styles.container}>
+          <Text style={styles.welcome}>
+            Welcome to Screen3 !
+          </Text>
+          <Text style={styles.instructions}>
+            To get started, edit app.js
+          </Text>
+          <Text style={styles.instructions}>
+            Press Cmd+R to reload,{'\n'}
+            Cmd+D or shake for dev menu
+          </Text>
+        </View>
+      );
+    }
+  }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -72,6 +91,7 @@ const styles = StyleSheet.create({
 
 Navigation.registerComponent('Screen1', () => react_native_navigation_bootstrap);
 Navigation.registerComponent('Screen2', () => Screen2);
+Navigation.registerComponent('Screen3', () => Screen3);
 Navigation.startTabBasedApp({
     tabs: [
       {
@@ -84,6 +104,12 @@ Navigation.startTabBasedApp({
         label: 'Two',
         screen: 'Screen2',
         title: 'Screen Two',
+        icon: require('./assets/icons/icon.png'),
+      },
+      {
+        label: 'Three',
+        screen: 'Screen3',
+        title: 'Screen Three',
         icon: require('./assets/icons/icon.png'),
       }
     ]
